@@ -1,11 +1,19 @@
 const Router = require('koa-router')
 const router = new Router()
 
+//引入财经获取到的数据
+const caijingnews = require('../modules/caijingnews')
 
 router.get('/', async(ctx, next) => {
     //ctx.body = 'index'
+
+    let caijing;
+    caijing = await caijingnews('8');
+
+
     await ctx.render('index', {
-        title: '首页'
+        title: '首页',
+        caijing: caijing
     })
   
 })
@@ -20,4 +28,4 @@ router.post('/index', async(ctx, next) => {
 })
 
 
-module.exports = router
+module.exports = router   //重要

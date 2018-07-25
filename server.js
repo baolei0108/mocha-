@@ -28,4 +28,7 @@ app.use(require('./routers/login.js').routes())
 
 
 app.listen(config.port)
+
+console.log(config.test.caijingnenws)
+
 console.log(`listen on http://localhost ${config.port}` )

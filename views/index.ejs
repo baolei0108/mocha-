@@ -1,9 +1,32 @@
 <h1>index h1</h1>
+<%-include("header") %>
 
+
+<%=title  %>
 <form action="/index" method="post">
     <input name="name">
     <input type="submit" value="Submit">
 
 </form>
 
-<%=title  %>
+
+<div>
+    <ul>
+        <% caijing.forEach((v,i)=> {   %>
+           <li> <%=v.title  %> </li>
+       <% } ) %>
+    </ul>
+
+</div>
+
+
+
+<div>
+    这是另一个模块
+    <%-include("other") %>
+</div>
+
+
+
+
+<%-include("footer") %>
