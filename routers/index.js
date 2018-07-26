@@ -10,7 +10,7 @@ router.get('/', async(ctx, next) => {
     let caijing;
     caijing = await caijingnews('8');
 
-
+    //渲染views文件的index.ejs
     await ctx.render('index', {
         title: '首页',
         caijing: caijing

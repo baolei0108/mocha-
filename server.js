@@ -9,10 +9,19 @@ const path = require('path')
 
 const bodyParser = require('koa-bodyparser')
 
+
+//处理静态文件，如css,img,js等
+app.use(require('koa-static')(path.join(__dirname, './public'), {
+   
+}))
+
+
+
 // 配置服务端模板渲染引擎中间件,渲染views文件夹下面的ejs文件,这段代码一定要放在最前面，避免报错
 app.use(views(path.join(__dirname, './views'), {
     extension: 'ejs'
 }))
+
 
 
 //处理post需要解析body

@@ -1,0 +1,27 @@
+<script>
+        // 初始化代码:
+        $(function () {
+            var vm = new Vue({
+                el: '#vm',
+                data: {
+                    name: 'Robot',
+                    age: 15
+                }
+            });
+            window.vm = vm;
+        });
+
+        $(function() {
+            $('.btn').click(function() {
+                alert("button");
+            })
+        })
+</script>
+
+
+
+<div id="vm">
+        <p>Hello, {{ name }}!</p>
+        <p>You are {{ age }} years old!</p>
+        <button class="btn">按钮</button>
+</div>
