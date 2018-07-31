@@ -28,4 +28,9 @@ router.post('/index', async(ctx, next) => {
 })
 
 
+// router.post('/', async(ctx, next)=> {
+//     ctx.body = `<h1>welcome</h1>`
+// })
+
+
 module.exports = router   //重要
