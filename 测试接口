@@ -1,0 +1,21 @@
+mocha 测试接口 判断某接口是否成功返回一个对象
+
+需要安装 mocha chai 还有 node-fetch
+代码如下所示：
+
+
+var expect = require('chai').expect
+var fetch = require('node-fetch')
+
+describe('测试接口', function() {
+    it('请求测试', function() {
+        return fetch('http://61.129.128.56:8802/api/ClickRank/GetClickRank')
+          .then(function(res) {
+              return res.json();
+
+          }).then(function(json) {
+              expect(json).to.be.an('object')
+             
+          })
+    })
+});
